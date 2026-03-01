@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="AirQA" />
+    <meta name="author" content="" />
+    <link rel="icon" href="" type="image/x-icon" />
+    <title>AirQA</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./style/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="./style/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="./style/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="./style/clean-blog.min.css" rel="stylesheet" />
+    <link href="./style/airqa.css" rel="stylesheet" />
+
+    <style>
+      /* All fonts changed to Lato */
+      header.masthead .page-heading,
+      header.masthead .post-heading,
+      header.masthead .site-heading {
+        padding: 50px 0 75px;
+      }
+      
+      #main {
+        font-size: 18px;
+      }
+      
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+      
+      #main h1,
+      #main h2,
+      #main h3,
+      #main h4 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+      #main h5,
+      #main h6 {
+        font-weight: 600;
+        margin: 5px 0;
+      }
+
+      #airqa-title {
+        font-family: 'Lato', sans-serif;
+        font-size: 80px;
+        color: #bff5d1;
+      }
+      
+      a {
+        color: #17a2b8;
+      }
+      
+      .list-group-item p {
+        margin: 5px 0;
+      }
+      
+      .card {
+        margin-bottom: 10px;
+      }
+      
+      .list-group {
+        margin-bottom: 10px;
+      }
+      
+      .card-header {
+        font-family: 'Lato', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        background: #eee;
+      }
+      
+      .badge {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+      }
+      
+      code,
+      pre {
+        background: #eee;
+        padding: 1px 3px;
+      }
+      
+      .table td,
+      .table th {
+        padding: 0.42em;
+      }
+      
+      .table {
+        margin-top: 8px;
+      }
+      
+      .far,
+      .fas {
+        font-size: 18px;
+      }
+      
+      .affiliation {
+        font-style: italic;
+        font-family: 'Lato', sans-serif;
+        font-weight: 200;
+        font-size: 18px;
+      }
+      
+      .paperlink {
+        font-size: 18px;
+        font-family: 'Lato', sans-serif;
+      }
+      
+      .crossed {
+        position: relative;
+        padding: 0.1rem;
+        overflow: hidden;
+      }
+      
+      .crossed:before,
+      .crossed:after {
+        position: absolute;
+        content: '';
+        background: #dc3545 !important;
+        display: block;
+        width: 20%;
+        height: 2px;
+        transform: rotate(-45deg);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 1px;
+      }
+      
+      .crossed:after {
+        transform: rotate(45deg);
+      }
+      
+      .supfact {
+        color: #28a745;
+      }
+      
+      span.line {
+        display: inline-block;
+      }
+      
+      .data-paragraph,
+      .data-question,
+      .data-answer {
+        margin-bottom: 8px;
+        transition: height 0.2s;
+      }
+      
+      .data-paragraph .paragraph-title {
+        color: #888888;
+      }
+      
+      .data-paragraph .supfact {
+        background: #bbffcc;
+        border-radius: 3px;
+        color: inherit;
+        transition: background-color 0.2s;
+      }
+      
+      .data-paragraph .hide {
+        background: none !important;
+      }
+      
+      #bird-title {
+        color: #155E95;
+      }
+      
+      #logo-img {
+        display: inline;
+        max-height: 200px;
+        cursor: pointer;
+        transition: all 0.6s;
+      }
+      
+      #logo-img:hover {
+        transform: scale(1.4);
+      }
+      
+      #caption {
+        font-size: 30px;
+        font-family: 'Lato', sans-serif;
+      }
+      
+      #introduction {
+        font-size: 18px;
+        font-family: 'Lato', sans-serif;
+      }
+      
+      #paper {
+        background-color: #34314c;
+        border-color: #34314c;
+      }
+      
+      .column-img {
+        max-width: 100%;
+      }
+      
+      #illustration {
+        font-family: 'Lato', sans-serif;
+      }
+      
+      .dataset-btn {
+        background-color: #1F7872;
+        min-width: 50% !important;
+      }
+
+        .btn-d {  
+        color: #155E95;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        font-weight: 1000;
+        width: 100%;
+        text-transform: none;
+        background-color: #EAF2FA;
+        border: 2px solid #155E95;
+        border-radius: 50px; 
+        display: inline-block;
+      }
+
+      .btn-d:hover {
+          background-color: #FF6969;
+          /* Change the background color when the cursor is over the button */
+      }
+
+    
+      #citation {
+        font-size: 0.75em;
+        overflow: auto;
+        border: 1px solid #999;
+        margin: 0 4px;
+        padding: 8px;
+        border-radius: 2px;
+      }
+      
+      .flex-box {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        padding: 15px;
+      }
+      
+      .flex-box > div {
+        border-radius: 5px;
+        padding: 8px;
+      }
+      
+      #header-color {
+        background-color: #E1EACD;
+      }
+      
+      #button-group {
+        width: 100%;
+      }
+      
+      .button-row {
+        width: 80%;
+        margin: 0 auto;
+        padding: 5px;
+      }
+      
+      
+      .btn-d:hover {
+        background-color: #FF6969;
+      }
+      
+      .btn-b {
+        color: #fff;
+        font-weight: 400;
+        text-transform: none;
+        background-color: #1F7872;
+        border-radius: 50px;
+      }
+      
+      /* The row for train/dev is removed; .btn-round can remain if needed */
+      .btn-round {
+        height: auto;
+        transition: background-color 0.3s;
+      }
+      
+      .btn {
+        padding: 8px;
+      }
+      
+      [data-tooltip]:hover::after {
+        font-variant-caps: normal;
+        content: attr(data-tooltip);
+        position: absolute;
+        border: 1px solid black;
+        background: #eee;
+        padding: 0.25em;
+        border-radius: 2px;
+      }
+      
+      .table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        width: auto;
+        padding: 0.5rem;
+      }
+      
+      /* Leaderboard table styling */
+      #ex-table {
+        max-width: 100%;
+        table-layout: auto; 
+        border-collapse: collapse;
+        margin: 0 auto;
+      }
+      /* Center all header and cell content */
+
+      #ex-table th,
+      #ex-table td {
+          width: auto;
+          padding: 10px;
+          text-align: center;
+          vertical-align: middle;
+      }
+      
+      /* Custom cell classes */
+      .rank-cell {
+        font-weight: bold;
+        padding: 5px;
+        /* background: #f8f9fa; */
+        border-radius: 4px;
+      }
+      /* Increase model cell width to 60% */
+      .model-cell {
+        width: 60%;
+      }
+      /* Smaller date-cell rectangle */
+      .date-cell {
+        font-size: 0.75em;
+        color: #ffffff;
+        background-color: #574964;
+        padding: 1px 4px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+    </style>
+
+
+
+  </head>
+
+  <body>
+    <header class="masthead" id="header-color">
+      <div style="background-color: #244a6c; text-align: left">
+        <a href="https://x-lance.github.io/" target="_blank" style="display: flex; align-items: center;">
+          <img
+            style="margin-top: 5px; padding: 15px"
+            height="80px"
+            src="./logo/xlance.png"
+            alt="X-LANCE Lab Logo"
+          />
+          <span style="color: white; font-size: 24px; margin-left: 10px;">X-LANCE Lab</span> <!-- 添加文本 -->
+        </a>
+        
+        <!-- <img
+          style="margin-top: 5px; padding: 15px"
+          height="70px"
+          src="./logo/logo-salesforce.png"
+        /> -->
+      </div>
+      <div style="background-color: #256093; text-align: left">
+        <div class="container">
+        
+          <div class="row">
+            <div class="col-lg-12 col-md-12 mx-auto">
+              <div class="row site-heading flex-box">
+                <div class="col-lg-12">
+                  <div class="align-middle">
+                    <h1 id="airqa-title">AirQA</h1>
+                    <span class="subheading" id="caption">Evaluating Scientific Question Answering in Realistic Scenarios</span>
+                    <br>
+                    <span class="subheading" id="caption">ICLR 2026 <span style="color: #FF4D4D;">&nbsp;Poster🔥</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" id="main" style="max-width: 1400px;">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="list-group">
+            <div class="list-group-item" id="introduction">
+              <!-- <div style="display: grid; grid-template-columns: auto auto; align-items: center;"> -->
+              <h4>About AirQA</h4>
+              <!-- <img src="https://badges.toozhao.com/badges/01JKQPJWT9GDEZW05QBNHTPE7S/green.svg" /> -->
+              <!-- </div> -->
+              <p>
+                <strong>AirQA</strong> is a human-annotated multi-modal multi-task question answering dataset, which encompasses 1,246 examples and 13,956 papers in the domain of artificial intelligence.<br><br>It contains 4 different question types (single, multiple, retrieval, comprehensive) and 5 different element categories (text, table, image, formula, metadata), with 19 parameterized Python functions to support customized evaluation.
+              </p>
+              <br>
+
+
+              <div id="button-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+                <a href="https://www.arxiv.org/abs/2509.16952" target="_blank">
+                  <button type="button" class="btn btn-d">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </button>
+                </a>
+                <a href="https://github.com/OpenDFM/AirQA" target="_blank">
+                  <button type="button" class="btn btn-d">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </button>
+                <a href="https://huggingface.co/datasets/OpenDFM/AirQA" target="_blank">
+                  <button type="button" class="btn btn-d">
+                    <span class="icon">
+                      <img src="./static/images/huggingface.svg" alt="Hugging Face" width="24" height="24" style="vertical-align: middle;">
+                    </span>
+                    <span>Data</span>
+                  </button>
+                </a>
+              </a>
+              <a href="https://docs.google.com/document/d/1XSVmQQbQPTncLy1eRPMdqJ_9eGHLweMsANG4aIZmJn0/edit?usp=sharing" target="_blank">
+                <button type="button" class="btn btn-d">
+                  <span class="icon">
+                    <i class="far fa-paper-plane"></i>
+                  </span>
+                  <span>Submit</span>
+                </button>
+              </a>
+
+              </div>
+
+
+            </div>
+            <style>
+              .scroll-container {
+                position: relative;
+                width: 100%;
+                max-height: 300px;
+                overflow-y: scroll;
+              }
+
+              /* Hide the scrollbar by default */
+              .scroll-container::-webkit-scrollbar {
+                width: 10px;
+                background: transparent;
+              }
+
+              /* Set the scrollbar thumb color */
+              .scroll-container::-webkit-scrollbar-thumb {
+                background-color: #ffffff;
+                border-radius: 5px;
+              }
+
+              /* Show the scrollbar when the mouse is hovering over the scroll container */
+              .scroll-container:hover::-webkit-scrollbar {
+                width: 10px;
+              }
+
+              .scroll-container:hover::-webkit-scrollbar-thumb:hover {
+                background-color: #555555;
+              }
+            </style>
+
+
+            <div class="list-group-item" id="news">
+              <h4>News</h4>
+
+              <div class="scroll-container">
+                <div
+                  class="card card-outline-secondary mb-4"
+                  style="text-align: left"
+                >
+                <div class="card-body" style="background-color: #f1f6f9">
+                  <ul style="padding-left: 0">
+                    <li style="list-style-type: none">
+                      <span
+                        style="
+                          background-color: #B03052;
+                          color: white;
+                          padding: 2px 4px;
+                          border-radius: 5px;
+                        "
+                      >
+                        <strong style="color: #ffe7ce">2026-02-26:</strong>
+                      </span>
+                      Our code and data have been publicly available! See above for the links.
+                    </li>
+                  </ul>
+                </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="list-group-item" id="illustration">
+              <h4>Why AirQA?</h4>
+              <p align="left">
+                <div class="left">
+                  While LLMs excel at atomic tasks, complex scientific inquiry remains a challenge requiring long-term reasoning rather than just processing given information.<br><br>
+                  
+                  <strong>AirQA</strong> bridges this gap by evaluating three critical capabilities: understanding both textual and paratextual elements, actively retrieving relevant papers from scratch, and applying long-term planning to orchestrate these tasks iteratively.<br><br>
+
+                  Unlike benchmarks focusing on isolated skills, <strong>AirQA</strong> emphasizes combining these abilities under realistic scenarios, shifting the focus from what a model knows to how it plans, retrieves, and synthesizes information over multiple steps.<br><br>
+
+                  Notably, even advanced LLMs solve less than half the tasks with external sources, dropping to merely 5% with questions alone, highlighting the significant challenges posed by <strong>AirQA</strong>.
+    
+                  <table border="1" style="display: none; font-size: 16px; width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <th>Setting</th>
+                        <th>Task Type</th>
+                        <th>#Examples</th>
+                        <th>Databases</th>
+                        <th>Cost</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Spider 2.0-Snow</strong></td>
+                        <td>Text-to-SQL task</td>
+                        <td>547</td>
+                        <td>Snowflake(547)</td>
+                        <td><span style="color: red;">NO COST!😊</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Spider 2.0-DBT</strong></td>
+                      <td>Code agent task</td>
+                      <td>68</td>
+                      <td>DuckDB (DBT)(68)</td>
+                      <td><span style="color: red;">NO COST!😊</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Spider 2.0-Lite</strong></td>
+                        <td>Text-to-SQL task</td>
+                        <td>547</td>
+                        <td>BigQuery(214), Snowflake(198), SQLite(135)</td>
+                        <td>Some cost incurred</td>
+                    </tr>
+                </table>
+
+
+
+
+                </div>
+            </div>
+            <div class="list-group-item">
+              <h4>Acknowledgements</h4>
+              <p align="left">
+                We would like to thank Haoran Wang, Jingyi Zhang, Ye Wang, Yuxun Miao, Danyang Zhang, Hanqi Li, Zichen Zhu, Situo Zhang, Senyu Han, Dingye Liu, Wenjie Sun, Hanchong Zhang, Nan Jiang, Liangtai Sun, Da Ma, Hankun Wang, and Zhihan Li for their careful annotation on the AirQA dataset. The website and submission guidelines are greatly inspired by <a href="https://bird-bench.github.io/">BIRD-SQL</a> and <a href="https://spider2-sql.github.io/">Spider 2.0</a>, and we thank them for their contributions.
+              </p>
+            </div>
+            <div class="list-group-item">
+              <h4>Data Examples</h4>
+              <div class="table-wrapper">
+                <table class="table" style="font-size: 16px; width: 100%; border-collapse: collapse;">
+                  <thead class="thead-light">
+                    <tr>
+                      <th class="text-center" style="width: 12%;">Type</th>
+                      <th class="text-center" style="width: 44%;">Question</th>
+                      <th class="text-center" style="width: 44%;">Answer Format</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="align-middle text-center"><strong>single</strong></td>
+                      <td>
+                        Which downstream tasks does the CLiCoTEA outperform other models in terms of zero-shot performance
+                        on the IGLUE benchmark?
+                      </td>
+                      <td>
+                        Your answer should be a Python list of strings, every string is the abbreviation of a downstream
+                        task type mentioned in the paper.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="align-middle text-center"><strong>multiple</strong></td>
+                      <td>
+                        According to this survey, what're the three most recent decoder-only LLMs for NL2Code? How many
+                        programming languages do their training datasets each contain?
+                      </td>
+                      <td>
+                        Your answer should be a Python dictionary of 3 key-value pairs, where each key is a string, the
+                        LLM, and each value is the number of programming languages.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="align-middle text-center"><strong>retrieval</strong></td>
+                      <td>
+                        Which paper unifies reinforcement learning and imitation learning methods under a dual framework?
+                      </td>
+                      <td>
+                        Your answer should be the exact title of the paper WITHOUT ANY OTHER EXPLANATION.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="align-middle text-center"><strong>comprehensive</strong></td>
+                      <td>
+                        Among the text-to-SQL papers in ACL 2023, which one achieves the best testsuite accuracy on the
+                        SPIDER dataset? Tell me the paper title and corresponding test accuracy.
+                      </td>
+                      <td>
+                        Your answer should be a Python list of length two, with the first one being the title string and
+                        the second one being a float, the accuracy rounded to 3 decimals.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="list-group-item">
+              <h4>Have Questions?</h4>
+              <p align="left">
+                <div class="left">Ask us questions at our <a href="https://github.com/OpenDFM/AirQA/issues">Github issues
+                    page</a> or contact <a href="mailto:htc981@sjtu.edu.cn">Tiancheng Huang</a> for more information.
+                </div>
+              </div>
+            <div class="list-group-item">
+              <h4>Citation</h4>
+              
+              <pre id="citation">@misc{huang2025airqacomprehensiveqadataset,
+    title={AirQA: A Comprehensive QA Dataset for AI Research with Instance-Level Evaluation}, 
+    author={Tiancheng Huang and Ruisheng Cao and Yuxin Zhang and Zhangyi Kang and Zijian Wang and Chenrun Wang and Yijie Luo and Hang Zheng and Lirong Qian and Lu Chen and Kai Yu},
+    year={2025},
+    eprint={2509.16952},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL},
+    url={https://arxiv.org/abs/2509.16952}, 
+}</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card card-outline-secondary">
+            <div class="card-header">Leaderboard</div>
+        
+            <!-- <ul class="nav nav-pills mb-3 justify-content-center" id="airqa-tabs" style="margin-top: 10px; font-size: 20px;">
+              <li class="nav-item">
+                <a class="nav-link active" href="#" data-target="airqaTab">AirQA</a>
+              </li>
+            </ul> -->
+            
+        
+            <!-- 切换选项卡的脚本 -->
+            <script>
+              document.querySelectorAll('#airqa-tabs .nav-link').forEach(function(tab) {
+                tab.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  const target = this.getAttribute('data-target');
+        
+                  // 更新选中状态
+                  document.querySelectorAll('#airqa-tabs .nav-link').forEach(nav => nav.classList.remove('active'));
+                  this.classList.add('active');
+        
+                  // 切换显示内容
+                  document.querySelectorAll('.airqa-tab').forEach(block => {
+                    block.style.display = (block.id === target) ? 'block' : 'none';
+                  });
+                });
+              });
+            </script>
+        
+            <!-- AirQA -->
+            <div id="airqaTab" class="list-group-item airqa-tab" style="display: block;">
+              <p>
+                The integral <strong>AirQA</strong> dataset with <strong>1,246</strong> examples. Since we continually check the dataset quality and welcome contributions, the scores may change slightly over time.
+              </p>              
+              <div class="table-wrapper">
+                <table class="table" id="ex-table-airqa">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col" rowspan="1" class="text-center">Rank</th>
+                      <th scope="col" rowspan="1" class="align-middle text-center">Method</th>
+                      <th scope="col" colspan="1" class="text-center">Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-date="Feb 26, 2026">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        Agentic Hybrid + Gemini-2.5-Pro
+                      </td>
+                      <td class="align-middle text-center"><b>44.14</b></td>
+                    </tr>
+                    <tr data-date="Feb 26, 2026">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        Agentic Hybrid + GPT-4o
+                      </td>
+                      <td class="align-middle text-center"><b>35.96</b></td>
+                    </tr>
+                    <tr data-date="Feb 26, 2026">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        Agentic Hybrid + Qwen2.5-72B-Instruct
+                      </td>
+                      <td class="align-middle text-center"><b>35.07</b></td>
+                    </tr>
+                    <tr data-date="Feb 26, 2026">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        Agentic Hybrid + DeepSeek-R1
+                      </td>
+                      <td class="align-middle text-center"><b>29.29</b></td>
+                    </tr>
+                    <tr data-date="Feb 26, 2026">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        Agentic Hybrid + Fine-tuned Qwen2.5-7B-Instruct
+                      </td>
+                      <td class="align-middle text-center"><b>24.07</b></td>
+                    </tr>
+                    <tr data-date="Feb 26, 2026">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        Qwen2.5-72B-Instruct
+                      </td>
+                      <td class="align-middle text-center"><b>4.65</b></td>
+                    </tr>
+                    <tr data-date="Feb 26, 2026">
+                      <td scope="row" class="align-middle text-center rank-cell"></td>
+                      <td class="align-middle text-center">
+                        GPT-4o
+                      </td>
+                      <td class="align-middle text-center"><b>4.41</b></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+
+        
+          </div>
+        </div>
+
+
+
+        
+<!-- 自动生成Rank的脚本 -->
+        <script>
+          // 遍历所有 id 以 ex-table- 开头的表
+          document.querySelectorAll('table[id^="ex-table-"]').forEach(function(table) {
+            const rows = table.querySelectorAll('tbody tr');
+            let regularRank = 1; // 用于记录正常排名
+            
+            rows.forEach((row) => {
+              const date = row.getAttribute('data-date');
+              const rankCell = row.querySelector('.rank-cell');
+              const isSpecialRank = row.getAttribute('data-special-rank') === 'true';
+              
+              if (rankCell) {
+                if (isSpecialRank) {
+                  // 特殊排名显示为 "-"
+                  rankCell.innerHTML = `<b>-*</b><br><span class="badge badge-secondary">${date}</span>`;
+                } else {
+                  // 正常排名
+                  rankCell.innerHTML = `<b>${regularRank}</b><br><span class="badge badge-secondary">${date}</span>`;
+                  regularRank++;
+                }
+              }
+            });
+          });
+        </script>
+
+
+
+      </div>
+
+      <hr />
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="./script/jquery.min.js"></script>
+      <script src="./script/bootstrap.bundle.min.js"></script>
+
+      <!-- Custom scripts for this template -->
+      <script src="./script/clean-blog.min.js"></script>
+    </div>
+  </body>
+</html>
